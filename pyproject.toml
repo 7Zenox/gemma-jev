@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemma-jev"
+version = "0.1.0"
+description = "Generation-free typed decisions on Gemma models"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.10.0",
+  "transformers>=5.17.0",
+  "accelerate==1.12.0",
+  "safetensors",
+  "huggingface-hub",
+  "sentencepiece",
+  "protobuf",
+  "numpy",
+  # The demo server is part of the project, not an optional extra: leaving these
+  # behind an extra means `uv run` uninstalls them.
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+]
+
+# Installed by `uv sync` and `uv run` by default. llama-cpp-python is needed by
+# bench/quantization.py to score GGUF builds, and playwright drives the browser
+# checks; neither belongs in a runtime install.
+[dependency-groups]
+dev = [
+  "pytest",
+  "playwright",
+  "llama-cpp-python",
+  "gguf",
+]
+
+[project.scripts]
+gemma-jev-score = "gemma_jev.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

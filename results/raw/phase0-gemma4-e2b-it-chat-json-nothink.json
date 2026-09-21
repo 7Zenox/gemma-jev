@@ -1,0 +1,58 @@
+{
+  "schema": "gemma-jev-phase0-v1",
+  "model": {
+    "source": "google/gemma-4-E2B-it",
+    "revision": "unpinned-local-development",
+    "dtype": "bfloat16",
+    "device": "mps:0",
+    "torch_version": "2.10.0",
+    "transformers_version": "5.17.0"
+  },
+  "fixture": {
+    "path": "reference/openjev/benchmarks/data/authored144.jsonl",
+    "rows": 144
+  },
+  "prompt": {
+    "style": "chat-json",
+    "shots": 3,
+    "version": "gemma-jev-letters-v1"
+  },
+  "quality": {
+    "n": 144,
+    "accuracy": 0.7916666666666666,
+    "mean_family_balanced_accuracy": 0.8066915655150949,
+    "chance_balanced_accuracy": 0.3333333333333333,
+    "family_results": {
+      "candidate_selection": {
+        "n": 48,
+        "accuracy": 0.9375,
+        "balanced_accuracy": 0.9248366013071895,
+        "macro_f1": 0.9325785325785326
+      },
+      "evidence_interpretation": {
+        "n": 48,
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.8476190476190476,
+        "macro_f1": 0.8313390313390313
+      },
+      "rule_application": {
+        "n": 48,
+        "accuracy": 0.6041666666666666,
+        "balanced_accuracy": 0.6476190476190476,
+        "macro_f1": 0.5983468286099866
+      }
+    }
+  },
+  "diagnostics": {
+    "median_allowed_token_mass": 1.0,
+    "min_allowed_token_mass": 0.9996872544288635,
+    "answer_separator": "",
+    "median_input_tokens": 142.0
+  },
+  "timing": {
+    "wall_seconds": 46.015061749960296,
+    "decisions_per_second": 3.129410121896104,
+    "median_forward_seconds": 0.23879793751984835
+  },
+  "probability_status": "conditional option score; uncalibrated as decision confidence"
+}

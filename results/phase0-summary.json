@@ -1,0 +1,188 @@
+{
+  "schema": "gemma-jev-phase0-summary-v1",
+  "date": "2026-09-21",
+  "fixture": {
+    "path": "reference/openjev/benchmarks/data/authored144.jsonl",
+    "rows": 144
+  },
+  "runs": {
+    "gemma3_270m_completion_3shot": {
+      "label": "Gemma 3 270M (base)",
+      "file": "raw/phase0-gemma3-270m-completion.json",
+      "style": "completion",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.2925385358821891,
+      "accuracy": 0.2986111111111111,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.3744410044719642,
+        "evidence_interpretation": 0.1634920634920635,
+        "rule_application": 0.33968253968253964
+      },
+      "median_allowed_token_mass": 0.9144018888473511,
+      "model": {
+        "source": "google/gemma-3-270m",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma3_1b_pt_completion_3shot": {
+      "label": "Gemma 3 1B (base)",
+      "file": "raw/phase0-gemma3-1b-pt-completion.json",
+      "style": "completion",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.3308860386259767,
+      "accuracy": 0.3194444444444444,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.30297557619539045,
+        "evidence_interpretation": 0.37142857142857144,
+        "rule_application": 0.3182539682539683
+      },
+      "median_allowed_token_mass": 0.9642822444438934,
+      "model": {
+        "source": "google/gemma-3-1b-pt",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma3_1b_it_completion_3shot": {
+      "label": "Gemma 3 1B-it, completion prompt",
+      "file": "raw/phase0-gemma3-1b-it-completion.json",
+      "style": "completion",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.35514521598112925,
+      "accuracy": 0.4097222222222222,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.4963880288957688,
+        "evidence_interpretation": 0.21825396825396826,
+        "rule_application": 0.3507936507936508
+      },
+      "median_allowed_token_mass": 0.999367892742157,
+      "model": {
+        "source": "google/gemma-3-1b-it",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma3_4b_pt_completion_3shot": {
+      "label": "Gemma 3 4B (base)",
+      "file": "raw/phase0-gemma3-4b-pt-completion.json",
+      "style": "completion",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.5661506707946337,
+      "accuracy": 0.5972222222222222,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.5540075679394565,
+        "evidence_interpretation": 0.5055555555555555,
+        "rule_application": 0.6388888888888888
+      },
+      "median_allowed_token_mass": 0.9848673343658447,
+      "model": {
+        "source": "google/gemma-3-4b-pt",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma4_e2b_completion_3shot": {
+      "label": "Gemma 4 E2B (base)",
+      "file": "raw/phase0-gemma4-e2b-completion.json",
+      "style": "completion",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.5083198191557324,
+      "accuracy": 0.5277777777777778,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.4963880288957688,
+        "evidence_interpretation": 0.4698412698412698,
+        "rule_application": 0.5587301587301587
+      },
+      "median_allowed_token_mass": 0.9911057949066162,
+      "model": {
+        "source": "google/gemma-4-E2B",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma4_e2b_it_chat": {
+      "label": "Gemma 4 E2B-it, plain-text chat",
+      "file": "raw/phase0-gemma4-e2b-it-chat.json",
+      "style": "chat",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.7774853801169591,
+      "accuracy": 0.75,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.9546783625730993,
+        "evidence_interpretation": 0.8761904761904762,
+        "rule_application": 0.5015873015873016
+      },
+      "median_allowed_token_mass": 1.0,
+      "model": {
+        "source": "google/gemma-4-E2B-it",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "gemma4_e2b_it_chat_json": {
+      "label": "Gemma 4 E2B-it, JSON chat",
+      "file": "raw/phase0-gemma4-e2b-it-chat-json-nothink.json",
+      "style": "chat-json",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.8066915655150949,
+      "accuracy": 0.7916666666666666,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.9248366013071895,
+        "evidence_interpretation": 0.8476190476190476,
+        "rule_application": 0.6476190476190476
+      },
+      "median_allowed_token_mass": 1.0,
+      "model": {
+        "source": "google/gemma-4-E2B-it",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    },
+    "qwen35_4b_chat_json": {
+      "label": "Qwen3.5-4B, JSON chat",
+      "file": "raw/phase0-qwen35-4b-chat-json.json",
+      "style": "chat-json",
+      "shots": 3,
+      "mean_family_balanced_accuracy": 0.8132381607613807,
+      "accuracy": 0.8055555555555556,
+      "family_balanced_accuracy": {
+        "candidate_selection": 0.6897144822841418,
+        "evidence_interpretation": 0.8706349206349207,
+        "rule_application": 0.8793650793650793
+      },
+      "median_allowed_token_mass": 0.9997425079345703,
+      "model": {
+        "source": "Qwen/Qwen3.5-4B",
+        "dtype": "bfloat16",
+        "device": "mps:0",
+        "transformers_version": "5.17.0",
+        "torch_version": "2.10.0"
+      }
+    }
+  },
+  "chance": 0.3333333333333333,
+  "published_reference_ladder": {
+    "note": "SemIf (formerly openjev) phase 1, same fixture and metric, native BF16 on CUDA",
+    "qwen3_0.6b": 0.44,
+    "minicpm5_2b": 0.686,
+    "qwen3.5_4b": 0.813,
+    "sarvam_1_2b_base_3shot": 0.516,
+    "sarvam_1_source": "SAGAR-TAMANG/sarvam-jev results/phase0-summary.json"
+  },
+  "standard_error_note": "144 rows, 48 per family: differences under ~0.04 are within noise."
+}
